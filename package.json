@@ -1,10 +1,10 @@
 {
 	"name": "fcc-learn-npm-package-json",
+	"author":"Naman Tiwari",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
 	"main": "server.js",
-	"author":"Naman Tiwari",
 	"scripts": {
 		"start": "node server.js"
 	},
