@@ -19,5 +19,9 @@
   "homepage": "https://github.com/freeCodeCamp/boilerplate-npm#readme",
   "version": "1.0.0",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {},
+  "keywords": [
+    "freecodecamp",
+    "backend"
+  ]
 }
