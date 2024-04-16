@@ -35,8 +35,25 @@ const personSchema = mongoose.Schema({
 
 let Person = mongoose.model("Person",personSchema);
 
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+const createAndSavePerson = (done) => { 
+  // done(null /*, data*/);
+  // Create a new document instance using the Person model constructor
+  const person = new Person({
+    name: "John Doe",
+    age: 30,
+    favoriteFoods: ["Pizza", "Sushi", "Chocolate"]
+  });
+
+  // Save the document instance to the database
+  person.save((err, data) => {
+    if (err) {
+      // Handle error
+      return done(err);
+    } else {
+      // Document saved successfully
+      return done(null, data);
+    }
+  });  
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
