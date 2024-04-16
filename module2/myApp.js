@@ -59,9 +59,19 @@ app
   })
   .post((req, res) => {
     // Handle POST request
+    const firstName = req.body.first; // Extract first name from request body
+    const lastName = req.body.last; // Extract last name from request body
 
-    console.log(`{ name: ${req.query.first} ${req.query.last} }`);
-    res.json({ name: `${req.query.first} ${req.query.last}` });
+    // Check if both first name and last name are provided in the request body
+    if (!firstName || !lastName) {
+        return res.status(400).json({ error: "Both first and last name parameters are required" });
+    }
+
+    // Construct the full name
+    const fullName = `${firstName} ${lastName}`;
+
+    // Respond with a JSON document containing the full name
+    res.json({ name: fullName });
   });
 
 module.exports = app;
