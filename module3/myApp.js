@@ -18,7 +18,22 @@ mongoose.connect(process.env.MONGO_URI, {
 //     console.log("Disconnected from MongoDB");
 //   });
 
-let Person;
+const personSchema = mongoose.Schema({
+  name:{
+    type:String,
+    required:true
+  },
+  age:{
+    type:Number,
+    required:true
+  },
+  favoriteFoods:{
+    type:[String],
+    default:[]
+  }
+})
+
+let Person = mongoose.model("Person",personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
