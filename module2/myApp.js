@@ -43,8 +43,8 @@ app.get("/:word/echo", (req, res) => {
 app
   .route("/name")
   .get((req, res) => {
-    const firstName = req.query.firstname; // Extract first name from query string
-    const lastName = req.query.lastname; // Extract last name from query string
+    const firstName = req.query.first; // Extract first name from query string
+    const lastName = req.query.last; // Extract last name from query string
 
     // Check if both first name and last name are provided in the query string
     if (!firstName || !lastName) {
@@ -60,8 +60,8 @@ app
   .post((req, res) => {
     // Handle POST request
 
-    console.log(`{ name: ${req.query.firstname} ${req.query.lastname} }`);
-    res.json({ name: `${req.query.firstname} ${req.query.lastname}` });
+    console.log(`{ name: ${req.query.first} ${req.query.last} }`);
+    res.json({ name: `${req.query.first} ${req.query.last}` });
   });
 
 module.exports = app;
